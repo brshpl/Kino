@@ -17,6 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: kino
+  password: "nhecsyfujkjdt"
+  host: localhost
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -29,7 +32,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: Kino
+  #username:
 
   # The password associated with the postgres role (username).
   #password:
@@ -81,5 +84,5 @@ test:
 production:
   <<: *default
   database: Kino_production
-  username: Kino
+  username: kino
   password: <%= ENV['KINO_DATABASE_PASSWORD'] %>
